@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <div class="container ">
+  <div class="container ove overflow-hidden">
     <div class="sun shared"></div>
     <router-link to="#mercury" class="shared mercury"></router-link>
     <router-link to="#venus" class="shared venus"></router-link>
@@ -26,6 +26,7 @@
   top: 50%;
   border-radius: 1000px;
   transform: translate(-50%, -50%);
+  transition: all .25s ease;
 }
 
 .sun {
@@ -40,7 +41,7 @@
 .mercury  {
   width: 80px;
   height: 80px;
-  border: 1px solid rgba(102, 166, 229, 0.12);
+  border: 1px solid rgba(102, 166,   229, 0.12);
   z-index: 100;
   animation: orbit 7.1867343561s linear infinite;
 }
@@ -56,6 +57,13 @@
   background: url("@/assets/planet-mercury.svg");
   background-size: cover;
 }
+
+.mercury:hover{
+  border: 1px solid #cce0e8;
+}
+
+
+
 
 .venus {
   width: 110px;
@@ -75,6 +83,10 @@
   width: 12px;
   background: url("@/assets/planet-venus.svg");
   background-size: cover;
+}
+
+.venus:hover{
+  border: 1px solid #e29f58;
 }
 
 .earth {
@@ -97,6 +109,12 @@
   background-size: cover;
 }
 
+.earth:hover{
+  border: 1px solid #4d53ea;
+}
+
+
+
 .mars {
   width: 212px;
   height: 212px;
@@ -117,6 +135,11 @@
   background-size: cover;
 }
 
+
+.mars:hover{
+  border: 1px solid #f06340;
+}
+
 .jupiter {
   width: 360px;
   height: 360px;
@@ -135,6 +158,10 @@
   width: 40px;
   background: url("@/assets/planet-jupiter.svg");
   background-size: cover;
+}
+
+.jupiter:hover{
+  border: 1px solid #d99f70;
 }
 
 .saturn {
@@ -159,6 +186,11 @@
   border-radius: 100px;
 }
 
+.saturn:hover{
+  border: 1px solid #e8bb62;
+}
+
+
 .uranus {
   width: 550px;
   height: 550px;
@@ -179,6 +211,10 @@
   background-size: cover;
 }
 
+.uranus:hover{
+  border: 1px solid #65f0d5;
+}
+
 .neptune {
   width: 660px;
   height: 660px;
@@ -197,7 +233,14 @@
   height: 20px;
   background-image: url("@/assets/planet-neptune.svg");
   background-size: cover;
+
 }
+
+.neptune:hover{
+  border: 1px solid #4374e6;
+}
+
+
 
 .stars {
   position: absolute;
@@ -211,9 +254,10 @@
   opacity: 0.7;
   border-color: transparent;
   overflow: hidden;
-  animation: orbit 179.9558282773s linear infinite;
+    animation: orbit 110.9558282773s linear infinite;
   background: url("@/assets/background-stars.svg");
 }
+
 
 /* .stars::before{
     position: absolute;
