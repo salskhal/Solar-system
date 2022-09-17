@@ -1,10 +1,12 @@
 <script setup>
 import Nav from "./components/Nav.vue";
+import Tnav from "./components/Tnav.vue";
 </script>
 
 <template >
   <div class="body">
     <Nav />
+    <!-- <Tnav /> -->
     <RouterView />
   </div>
 </template>
@@ -21,7 +23,8 @@ import Nav from "./components/Nav.vue";
   font-family: "Poppins", sans-serif;
   font-size: 10px;
   background-size: cover;
-  background-color: hsl(240,67%,8%);
+  min-height: 100vh;
+  background-color: rgb(23, 21, 21);
   background-image: url("@/assets/background-stars.svg");
 }
 </style>

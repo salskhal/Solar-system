@@ -1,16 +1,29 @@
-<script setup></script>
+<script setup>
+import { ref } from "@vue/reactivity";
+
+let links = ref([
+  { name: "Mercury", link: "mercury" },
+  { name: "Venus", link: "venus" },
+  { name: "Earth", link: "earth" },
+  { name: "Mars", link: "mars" },
+  { name: "Jupiter", link: "jupiter" },
+  { name: "Saturn", link: "saturn" },
+  { name: "Uranus", link: "uranus" },
+  { name: "Neptune", link: "neptune" },
+]);
+</script>
 
 <template>
-  <div class="container ove overflow-hidden">
+  <div class="container  overflow-hidden ">
     <div class="sun shared"></div>
-    <router-link to="#mercury" class="shared mercury"></router-link>
-    <router-link to="#venus" class="shared venus"></router-link>
-    <router-link to="#earth" class="shared earth"></router-link>
-    <router-link to="#mars" class="shared mars"></router-link>
-    <router-link to="#jupiter" class="shared jupiter"></router-link>
-    <router-link to="#saturn" class="shared saturn"></router-link>
-    <router-link to="#uranus" class="shared uranus"></router-link>
-    <router-link to="#neptune" class="shared neptune"></router-link>
+
+    <router-link
+      :to="{ name: 'planet', params: { id: link.name } }"
+      v-for="(link, index) in links"
+      :key="index"
+      :class="link.link"
+      class="shared"
+    ></router-link>
     <div class="stars"></div>
   </div>
 </template>
@@ -20,13 +33,13 @@
   position: relative;
 }
 
-  .shared {
+.shared {
   position: absolute;
   left: 50%;
   top: 50%;
   border-radius: 1000px;
   transform: translate(-50%, -50%);
-  transition: all .25s ease;
+  transition: all 0.25s ease;
 }
 
 .sun {
@@ -38,10 +51,10 @@
   background-size: cover;
 }
 
-.mercury  {
+.mercury {
   width: 80px;
   height: 80px;
-  border: 1px solid rgba(102, 166,   229, 0.12);
+  border: 1px solid rgba(102, 166, 229, 0.12);
   z-index: 100;
   animation: orbit 7.1867343561s linear infinite;
 }
@@ -58,12 +71,9 @@
   background-size: cover;
 }
 
-.mercury:hover{
+.mercury:hover {
   border: 1px solid #cce0e8;
 }
-
-
-
 
 .venus {
   width: 110px;
@@ -85,7 +95,7 @@
   background-size: cover;
 }
 
-.venus:hover{
+.venus:hover {
   border: 1px solid #e29f58;
 }
 
@@ -109,11 +119,9 @@
   background-size: cover;
 }
 
-.earth:hover{
+.earth:hover {
   border: 1px solid #4d53ea;
 }
-
-
 
 .mars {
   width: 212px;
@@ -135,8 +143,7 @@
   background-size: cover;
 }
 
-
-.mars:hover{
+.mars:hover {
   border: 1px solid #f06340;
 }
 
@@ -160,7 +167,7 @@
   background-size: cover;
 }
 
-.jupiter:hover{
+.jupiter:hover {
   border: 1px solid #d99f70;
 }
 
@@ -186,10 +193,9 @@
   border-radius: 100px;
 }
 
-.saturn:hover{
+.saturn:hover {
   border: 1px solid #e8bb62;
 }
-
 
 .uranus {
   width: 550px;
@@ -211,7 +217,7 @@
   background-size: cover;
 }
 
-.uranus:hover{
+.uranus:hover {
   border: 1px solid #65f0d5;
 }
 
@@ -233,14 +239,11 @@
   height: 20px;
   background-image: url("@/assets/planet-neptune.svg");
   background-size: cover;
-
 }
 
-.neptune:hover{
+.neptune:hover {
   border: 1px solid #4374e6;
 }
-
-
 
 .stars {
   position: absolute;
@@ -254,10 +257,9 @@
   opacity: 0.7;
   border-color: transparent;
   overflow: hidden;
-    animation: orbit 110.9558282773s linear infinite;
+  animation: orbit 110.9558282773s linear infinite;
   background: url("@/assets/background-stars.svg");
 }
-
 
 /* .stars::before{
     position: absolute;
@@ -283,4 +285,5 @@
     transform: translate(-50%, -50%) rotate(-360deg);
   }
 }
+
 </style>
