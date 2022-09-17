@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from "@vue/reactivity";
-import Hamburger from "../assets/icons/hamburger.svg"
-import Close from "../assets/icons/close.svg"
+import Hamburger from "../assets/icons/hamburger.svg";
+import Close from "../assets/icons/close.svg";
 
 let links = ref([
   { name: "Mercury", link: "mercury" },
@@ -15,7 +15,7 @@ let links = ref([
 ]);
 </script>
 <template>
-  <nav class="px-10 py-6 flex items-center border-b border-navBod ">
+  <nav class="px-10 py-6 flex items-center border-b border-navBod">
     <h1 class="text-2xl text-white font-semibold">
       <router-link to="/">THE PLANETS</router-link>
     </h1>
@@ -33,7 +33,7 @@ let links = ref([
         }}</router-link>
       </li>
     </ul>
-    <Hamburger  class="w-10 md:hidden ml-auto cursor-pointer"/>
+    <Hamburger class="w-10 md:hidden ml-auto cursor-pointer" />
     <!-- <div class="overlay ">
       <Close class="absolute top-5 right-5 w-10"/>
       <ul
@@ -57,8 +57,7 @@ let links = ref([
 
 <style scoped>
 
-
-.overlay{
+.overlay {
   width: 100%;
   height: 100vh;
   background: pink;
@@ -69,9 +68,9 @@ let links = ref([
 }
 
 @media (min-width: 768px) {
-    .overlay{
-      display: none;
-    }
+  .overlay {
+    display: none;
+  }
 }
 .mercury:hover {
   border-top: 3px solid #cce0e8;
@@ -97,8 +96,6 @@ let links = ref([
   border-top: 3px solid #e8bb62;
 }
 
-
-
 .uranus:hover {
   border-top: 3px solid #65f0d5;
 }
@@ -106,5 +103,4 @@ let links = ref([
 .neptune:hover {
   border-top: 3px solid #4374e6;
 }
-
 </style>
